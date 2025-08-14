@@ -208,3 +208,21 @@ public class SinglyLinkedList{
 		list.updateAtPosition(10,500);
 	}
 }
+OUTPUT:
+List:
+10->15->20->null
+List:
+15->20->null
+List:
+15->null
+List:
+15->25->30->40->null
+Position of 25:1
+Updated Position 1 from 25 to 100
+List:
+15->100->30->40->null
+Updated Position 0 from 15 to 9
+Updated Position 3 from 40 to 99
+List:
+9->100->30->99->null
+Invalid Position
