@@ -187,7 +187,7 @@ public class SinglyCircularLinkedList{
 			current=current.next;
 		}
 		while(current!=head);
-		   System.out.println("null");
+		   System.out.println("head");
 		
     }	
     public int getSize()
@@ -228,19 +228,19 @@ public class SinglyCircularLinkedList{
 OUTPUT:
 
 List:
-10->15->20->null
+10->15->20->head
 List:
-15->20->null
+15->20->head
 List:
-15->null
+15->head
 List:
-15->25->30->40->null
+15->25->30->40->head
 Position of 25:1
 Updated Position 1 from 25 to 100
 List:
-15->100->30->40->null
+15->100->30->40->head
 Updated Position 0 from 15 to 9
 Updated Position 3 from 40 to 99
 List:
-9->100->30->99->null
+9->100->30->99->head
 Invalid Position
