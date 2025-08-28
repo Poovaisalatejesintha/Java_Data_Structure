@@ -1,0 +1,52 @@
+import java.util.Scanner;
+class Stack{
+	private int[] Stack;
+	private int top;
+	private int capacity;
+	Stack(int size){
+		capacity=size;
+		Stack=new int[capacity];
+		top=-1;
+	}
+	void push(int data){
+		if(isFull()){
+			System.out.println("Stack Overflow");
+			return;
+		}
+		Stack[++top]=data;
+		System.out.println(data+"pushed into stock:");
+	}
+	void pop(){
+		if(isEmpty()){
+			System.out.println("Stack Underflow!");
+			return;
+		}
+		System.out.println(Stack[top--]+"popped from stack:");
+	}
+	void peek(){
+		if(isEmpty()){
+			System.out.println("Stack is empty:");
+			return;
+		}
+		System.out.println("Top elements is:"+Stack[top]);
+	}
+	boolean isEmpty(){
+		return top==-1;
+	}
+	boolean isFull(){
+		return top==capacity-1;
+	}
+}
+public class StackUsingArray{
+	public static void main(String[]args){
+		Scanner sc=new Scanner(System.in);
+		Stack stack=new Stack(5);
+		stack.push(10);
+		stack.push(20);
+		stack.peek();
+		stack.pop();
+		stack.peek();
+		sc.close();
+	}
+}
+		
