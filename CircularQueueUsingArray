@@ -1,0 +1,81 @@
+import java.util.Scanner;
+class CircularQueue{
+	private int[] queue;
+	private int front,rear,size,capacity;
+	CircularQueue(int size){
+		capacity=size;
+		queue=new int[capacity];
+		front=rear=-1;
+		this.size=0;
+	}
+	void enqueue(int data){
+		if(isFull()){
+			System.out.println("CircularQueue Overflow");
+			return;
+		}
+		if(front==-1)
+			front=0;
+		rear=(rear+1)%capacity;
+		queue[rear]=data;
+		size++;
+		System.out.println(data+" Enqueued");
+	}
+	void dequeue(){
+		if(isEmpty()){
+			System.out.println("Queue Underflow!");
+			return;
+		}
+		System.out.println(queue[front]+" Dequeued");
+		front=(front+1)%capacity;
+		size--;
+		if(size==0)
+			front=rear=-1;
+	}
+	void peek(){
+		if(isEmpty()){
+			System.out.println("Circular Queue is empty:");
+			return;
+		}
+		System.out.println("Front element is:"+queue[front]);
+	}
+	boolean isEmpty(){
+		return size==0;
+	}
+	boolean isFull(){
+		return size==capacity;
+	}
+}
+public class CircularQueueUsingArray{
+	public static void main(String[]args){
+		Scanner sc=new Scanner(System.in);
+		int size=sc.nextInt();
+		CircularQueue queue=new CircularQueue(size);
+		queue.enqueue(10);
+		queue.enqueue(20);
+		queue.enqueue(30);
+		queue.dequeue();
+		queue.enqueue(40);
+		queue.enqueue(50);
+		queue.enqueue(60);
+		queue.peek();
+		queue.dequeue();
+		queue.peek();
+		sc.close();
+		
+	}
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Output:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5
+10 Enqueued
+20 Enqueued
+30 Enqueued
+10 Dequeued
+40 Enqueued
+50 Enqueued
+60 Enqueued
+Front element is:20
+20 Dequeued
+Front element is:30
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
