@@ -14,14 +14,14 @@ class Stack{
 			return;
 		}
 		Stack[++top]=data;
-		System.out.println(data+"pushed into stock:");
+		System.out.println(data+" pushed into stack");
 	}
 	void pop(){
 		if(isEmpty()){
 			System.out.println("Stack Underflow!");
 			return;
 		}
-		System.out.println(Stack[top--]+"popped from stack:");
+		System.out.println(Stack[top--]+" popped from stack");
 	}
 	void peek(){
 		if(isEmpty()){
@@ -49,4 +49,12 @@ public class StackUsingArray{
 		sc.close();
 	}
 }
-		
+
+OUTPUT:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10 pushed into stack
+20 pushed into stack
+Top elements is:20
+20 popped from stack
+Top elements is:10
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
